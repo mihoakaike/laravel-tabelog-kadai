@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Category;
+use App\Models\MajorCategory;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -27,12 +28,14 @@ class CategoryController extends AdminController
         $grid = new Grid(new Category());
 
         $grid->column('id', __('Id'))->sortable();
+        $grid->column('major_category_id', __('Major category name'))->editable('select', MajorCategory::all()->pluck('name', 'id'));
         $grid->column('name', __('Name'));
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'))->sortable();
 
 
         $grid->filter(function($filter){
+            $filter->in('major_category_id', '親カテゴリー')->multipleSelect(MajorCategory::all()->pluck('name', 'id'));
             $filter->like('name','カテゴリー');
             $filter->between('created_at','登録日')->datetime();
             $filter->between('update_at','更新日')->datetime();
@@ -52,6 +55,7 @@ class CategoryController extends AdminController
         $show = new Show(Category::findOrFail($id));
 
         $show->field('id', __('Id'));
+        $show->field('major_category.name', __('Major category name'));
         $show->field('name', __('Name'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -68,7 +72,9 @@ class CategoryController extends AdminController
     {
         $form = new Form(new Category());
 
+        $form->select('major_category_id', __('Major Category Name'))->options(MajorCategory::all()->pluck('name', 'id'));
         $form->text('name', __('Name'));
+        $form->textarea('description', __('Description'));
 
         return $form;
     }

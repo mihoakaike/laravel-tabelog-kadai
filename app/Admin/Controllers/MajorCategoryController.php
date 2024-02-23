@@ -26,11 +26,17 @@ class MajorCategoryController extends AdminController
     {
         $grid = new Grid(new MajorCategory());
 
-        $grid->column('id', __('Id'));
+        $grid->column('id', __('Id'))->sortable();
         $grid->column('name', __('Name'));
         $grid->column('description', __('Description'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->sortable();
+        $grid->column('updated_at', __('Updated at'))->sortable();
+
+        $grid->filter(function($filter) {
+            $filter->like('name', '親カテゴリー名');
+            $filter->like('description', '説明');
+            $filter->between('created_at', '登録日')->datetime();
+        });
 
         return $grid;
     }
