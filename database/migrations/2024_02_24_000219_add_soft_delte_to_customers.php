@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reviws', function (Blueprint $table) {
-            $table->id();
-            $table->string('store_id');
-            $table->string('customer_id');
-            $table->string('comment');
-            $table->integer('rating');
-            $table->timestamps();
+        Schema::table('customers', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviws');
+        Schema::table('customers', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };
