@@ -21,7 +21,7 @@ class StoreController extends Controller
      
             return view('stores.index', compact('stores'));
 
-            $categories = Category::all();
+            $categories = DB::table('categories')->get($name);
      
             return view('stores.index', compact('categories'));
         }
@@ -64,7 +64,9 @@ class StoreController extends Controller
      */
     public function show(Store $store)
     {
-        return view('stores.show', compact('store'));
+        $reviews = $store->reviews()->get();
+  
+        return view('stores.show', compact('store', 'reviews'));
     }
 
     /**
