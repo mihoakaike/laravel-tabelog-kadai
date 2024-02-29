@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,10 @@ class StoreController extends Controller
             $stores = Store::all();
      
             return view('stores.index', compact('stores'));
+
+            $categories = Category::all();
+     
+            return view('stores.index', compact('categories'));
         }
 
     /**
