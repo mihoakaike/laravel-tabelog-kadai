@@ -13,11 +13,12 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
         {
-             $stores = Store::all();
+            $stores = Store::all();
      
-             return view('stores.index', compact('stores'));
+            return view('stores.index', compact('stores'));
         }
 
     /**
@@ -27,7 +28,9 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+  
+        return view('stores.create', compact('stores'));
     }
 
     /**
@@ -38,7 +41,14 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Store();
+        $store->name = $request->input('name');
+        $store->description = $request->input('description');
+        $store->price = $request->input('lowest_price');
+        $store->category_id = $request->input('category_id');
+        $store->save();
+ 
+        return to_route('stores.index');
     }
 
     /**
@@ -49,7 +59,7 @@ class StoreController extends Controller
      */
     public function show(Store $store)
     {
-        //
+        return view('stores.show', compact('store'));
     }
 
     /**
@@ -60,7 +70,9 @@ class StoreController extends Controller
      */
     public function edit(Store $store)
     {
-        //
+        $categories = Category::all();
+  
+        return view('stores.edit', compact('store', 'categories'));
     }
 
     /**
@@ -72,7 +84,13 @@ class StoreController extends Controller
      */
     public function update(Request $request, Store $store)
     {
-        //
+        $store->name = $request->input('name');
+        $store->description = $request->input('description');
+        $store->price = $request->input('lowest_price');
+        $store->category_id = $request->input('category_id');
+        $store->update();
+ 
+        return to_route('stores.index');
     }
 
     /**
@@ -83,6 +101,8 @@ class StoreController extends Controller
      */
     public function destroy(Store $store)
     {
-        //
+        $store->delete();
+  
+         return to_route('stores.index');
     }
 }

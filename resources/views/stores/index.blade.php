@@ -1,6 +1,8 @@
+<a href="{{ route('stores.create') }}"> Create New Store</a>
+
 @extends('layouts.app')
  
- @section('content')
+@section('content')
 
 <main>
             <!-- 店舗一覧 -->
@@ -12,161 +14,32 @@
             </form>
             </div>
 
+        @foreach ($stores as $store)
+
             <section id="content">
                 <ul>
                 <li class="shop">
                     <div class="shop-details">
-                    <h2>グッドウィン</h2>
+                    <h2>{{ $store->name }}</h2>
                     <img class="shop-img" src="{{asset('img/shop.jpg')}}" alt="店のイメージ画像">
                     <div class="frame1">
                     <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
+                    <p><span class="frame2">カテゴリ：</span><span class="frame3">{{ $store->category }}</span></p>
                     </div>
                     <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
+                    <p><span class="frame2">営業時間：</span><span class="frame3">{{ $store->opening_time }}~{{ $store->closeing_time }}</span></p>
                     </div>
                     <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
+                    <p><span class="frame2">予算：</span><span class="frame3">¥{{ $store->lowest_price }}~¥{{ $store->highest_price }}</span></p>
                     </div>
                     </div>
                     </div>
                 </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
-                <li class="shop">
-                    <div class="shop-details">
-                    <h2>グッドウィン</h2>
-                    <img class="shop-img" src="../nagoyameshi/kyoutu/img/shop.jpg" alt="店のイメージ画像">
-                    <div class="frame1">
-                    <div class="category">
-                    <p><span class="frame2">カテゴリ：</span><span class="frame3">天ぷら</span></p>
-                    </div>
-                    <div class="opening">
-                    <p><span class="frame2">営業時間：</span><span class="frame3">16:00~22:00</span></p>
-                    </div>
-                    <div class="money">
-                    <p><span class="frame2">予算：</span><span class="frame3">¥1,000~¥2,500</span></p>
-                    </div>
-                    </div>
-                    </div>
-                </li>
+        
+                <a href="{{ route('stores.show',$store->id) }}">Show</a>
+
+        @endforeach
+                
                 </ul>
             </section>
         </main>

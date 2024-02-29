@@ -10,7 +10,17 @@ class Store extends Model
     use HasFactory;
 
     public function category()
-     {
-         return $this->belongsTo(Category::class);
-     }
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

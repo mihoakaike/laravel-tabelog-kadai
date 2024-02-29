@@ -23,8 +23,8 @@ return new class extends Migration
             $table->text('description');
             $table->time('opening_time');
             $table->time('closeing_time');
-            $table->integer('lowest_price');
-            $table->integer('highest_price');
+            $table->integer('lowest_price')->unsigned();
+            $table->integer('highest_price')->unsigned();
             $table->string('post_code');
             $table->string('address');
             $table->string('phone_number');

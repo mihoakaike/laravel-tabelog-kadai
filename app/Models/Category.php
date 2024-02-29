@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
+   use HasFactory;
 
-    public function store()
-     {
-         return $this->hasMany(Store::class);
-     }
+   public function store()
+   {
+      return $this->hasMany(Store::class);
+   }
 
-     public function major_category()
-     {
-         return $this->belongsTo(MajorCategory::class);
-     }
+   public function major_category()
+   {
+      return $this->belongsTo(MajorCategory::class);
+   }
 }
