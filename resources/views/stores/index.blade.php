@@ -38,6 +38,7 @@
             </section>
 
         @endforeach
-        </main>
+       
+    </main>
 
 @endsection

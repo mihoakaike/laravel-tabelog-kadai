@@ -13,7 +13,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
-    public function review()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }

@@ -23,42 +23,8 @@
   }
   
   /* ナビゲーション */
-  #nav {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  #nav > a {
-    text-decoration: none;
-    padding-left: 1em;
-  }
-
-  #nav > a:link {
-    color: #ffffff;
-  }
-
-  #nav > a:visited {
-    color: #ffffff;
-  }
-
-  #nav > a:hover {
-    color: #ffffff;
-  }
-
-  #nav > a:active {
-    color: #ffffff;
-  }
-
+ 
   /* フッター */
-  footer {
-    width: 100%;
-    background-color: #754F44;
-    text-align: center;
-  }
-
-  #copyright {
-    color: #ffffff;
-  }
 
   /* 店舗一覧 */
   #content {
