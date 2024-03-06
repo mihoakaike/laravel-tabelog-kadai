@@ -22,7 +22,13 @@
         <!-- ログインユーザー -->
             @else
             <li class="nav-item mr-5">
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a class="nav-link" href="{{ route('mypage') }}">
+            <label>マイページ</label>
+            </a>
+            </li>
+            
+            <li class="nav-item mr-5">
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             ログアウト
             </a>
  

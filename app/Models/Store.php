@@ -14,7 +14,7 @@ class Store extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function review()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }

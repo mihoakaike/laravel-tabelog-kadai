@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -18,11 +17,12 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'content' => 'required'
+            'comment' => 'required'
         ]);
 
         $review = new Review();
-        $review->content = $request->input('content');
+        $review->comment = $request->input('comment');
+        $review->rating = $request->input('rating');
         $review->store_id = $request->input('store_id');
         $review->user_id = Auth::user()->id;
         $review->save();

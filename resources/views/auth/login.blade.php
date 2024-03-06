@@ -9,6 +9,7 @@
 
             <hr>
             <form method="POST" action="{{ route('login') }}">
+            @csrf
             
             <!-- メールアドレス -->
             <div class="form-group">
