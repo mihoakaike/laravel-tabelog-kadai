@@ -35,7 +35,7 @@ class StoreController extends AdminController
         $grid->column('img3', __('Img3'))->image();
         $grid->column('description', __('Description'));
         $grid->column('opening_time', __('Opening time'))->sortable();
-        $grid->column('closeing_time', __('Closeing time'))->sortable();
+        $grid->column('closing_time', __('Closing time'))->sortable();
         $grid->column('lowest_price', __('Lowest price'))->sortable();
         $grid->column('highest_price', __('Highest price'))->sortable();
         $grid->column('post_code', __('Post code'));
@@ -75,7 +75,7 @@ class StoreController extends AdminController
         $show->field('img3', __('Img3'))->image();
         $show->field('description', __('Description'));
         $show->field('opening_time', __('Opening time'));
-        $show->field('closeing_time', __('Closeing time'));
+        $show->field('closing_time', __('Closing time'));
         $show->field('lowest_price', __('Lowest price'));
         $show->field('highest_price', __('Highest price'));
         $show->field('post_code', __('Post code'));
@@ -104,7 +104,7 @@ class StoreController extends AdminController
         $form->text('img3', __('Img3'));
         $form->textarea('description', __('Description'));
         $form->time('opening_time', __('Opening time'))->default(date('H:i:s'));
-        $form->time('closeing_time', __('Closeing time'))->default(date('H:i:s'));
+        $form->time('closing_time', __('Closing time'))->default(date('H:i:s'));
         $form->number('lowest_price', __('Lowest price'));
         $form->number('highest_price', __('Highest price'));
         $form->text('post_code', __('Post code'));

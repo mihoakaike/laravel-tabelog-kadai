@@ -5,12 +5,6 @@
     background-color: #fff;
   }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #998675;
-  }
-
   #logo {
     font-family: Tahoma;
     color: #FFFAFA;
@@ -92,64 +86,98 @@
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .10);
   }
 
-  .row dt {
+  .shop-details .row dt {
+    font-weight: normal; 
     padding: 0 0 0 20px;
     margin-bottom: 0;
   }
 
-  .row dd {
+  .shop-details .row dd {
     padding: 0;
     margin-bottom: 0;
   }
 
   /* 店舗詳細 */
-  #information h2 {
-    padding-left: 3px;
-    border-left: solid 3px #BC917A;
+  .reservation-button a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto 3rem auto;
+    max-width: 250px;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
   }
 
-  .box {
+  .reservation-button a:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    border-radius: 3px;
+    background: #998675;
+    transition: .2s;
+  }
+
+  .reservation-button a:hover:before {
+    top: calc(100% - 2px);
+  }
+
+  .tenposhousai-container {
     display: flex;
   }
 
-  .detail-information {
-    background-color: #F6F4EC;
+  .review-container {
+    width: 40%;
+    margin-right: 5%;
+  }
+  
+  .comment-container {
+    display:flex;
+    flex-flow:column;
+    /* justify-content:space-between; */
+    width: 45%;
   }
 
-  .about {
-    background-color: #F6F4EC;
+  .comment-container textarea {
+    width: 100%;
+  }
+
+  .detail-information {
+    margin: 0 auto;
+    padding-left: 4rem;
+  }
+
+  .detail-information .row dt {
+    font-weight: normal; 
+    font-size: 1.2rem;
+    border-bottom: 1px solid #998675;
+    padding: 1.5rem 1.5rem 0 2rem;
+  }
+
+  .detail-information .row dd {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #998675;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 0;
   }
 
   /* PC用スタイル */
   @media screen and (min-width: 768px){
  
-  /* 店舗一覧 */
-  header {
-    padding: 0.5rem 3rem;
-  }
-
-  #logo {
-    font-size: 2rem;
-  }
-  
-  #nav {
-  font-size: 1rem;
-  }
-
-  .search {
-    width: 10rem;
-    height: 2rem;
-  }
-
-  .fas {
-    font-size: 2rem;
-  }
-
+  /* 共通スタイル    */
   main {
     max-width: 1080px;
     margin-right: auto;
     margin-left: auto;
   }
+
+  /* 店舗一覧 */
   
   #content ul {
     display: flex;
@@ -179,53 +207,17 @@
     height: 500px;
   }
 
-  #information {
-
-    width: 800px;
-    margin: 0 auto;
-  }
 
   .box {
     padding: 5px;
   }
 
-  .detail-information {
-    width: 430px;
-    margin-right: 15px;
-    padding: 10px;
-  }
-
-  .about {
-    width: 350px;
-    padding: 10px;
-  }
 
   }
 
   /* スマートフォン用スタイル */
   @media screen and (max-width: 767px) {
   /* 店舗一覧 */
-  header {
-    padding: 0.5rem 1rem;
-  }
-
-  #logo {
-    font-size: 1.5rem;
-  }
-
-  #nav {
-    font-size: 0.8rem;
-  }
-  
-  .search {
-    width: 8rem;
-    height: 1.5rem;
-  }
-
-  .fas {
-    font-size: 1.5rem;
-  }
-
   main {
     margin: 0;
   }

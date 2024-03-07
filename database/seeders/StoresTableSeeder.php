@@ -29,7 +29,7 @@ class StoresTableSeeder extends Seeder
                 'lowest_price' => 1000,
                 'highest_price' => 8000,
                 'opening_time' => '16:00',
-                'closeing_time' => '22:00',
+                'closing_time' => '22:00',
                 'post_code' => '839-9353',
                 'address' => '和歌山県 井高市加藤町鈴木9-10-8 コーポ渚105号',
                 'phone_number' => '09000000000',

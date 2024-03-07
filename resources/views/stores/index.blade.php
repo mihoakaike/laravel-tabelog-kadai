@@ -26,7 +26,7 @@
             <dt class="col-5">カテゴリ：</dt>
             <dd class="col-5">{{ $store->category->name }}</dd>
             <dt class="col-5">営業時間：</dt>
-            <dd class="col-5">{{ $store->opening_time }}~{{ $store->closeing_time }}</dd>
+            <dd class="col-5">{{ $store->opening_time }}~{{ $store->closing_time }}</dd>
             <dt class="col-5">予算：</dt>
             <dd class="col-5">¥{{ $store->lowest_price }}~¥{{ $store->highest_price }}</dd>
             </dl>

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('img3');
             $table->text('description');
             $table->time('opening_time');
-            $table->time('closeing_time');
+            $table->time('closing_time');
             $table->integer('lowest_price')->unsigned();
             $table->integer('highest_price')->unsigned();
             $table->string('post_code');
