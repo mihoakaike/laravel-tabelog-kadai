@@ -3,9 +3,13 @@
 @section('content')
 
 <main>
-    
+    <!-- 予約完了メッセージ-->
+    @if (session('message'))
+    {{ session('message') }}
+    @endif
+
     <!-- 店舗名 -->
-    <p class="display-6">{{ $store->name }}</p>
+    <p class="offset-1 display-6">{{ $store->name }}</p>
     
     <!-- イメージ画像 -->
     <section id="carousel-section">
@@ -44,6 +48,7 @@
     <div class="offset-1 tenposhousai-container">
         <div class="review-container">
             @foreach($reviews as $review)
+            <p class="review-score-color">{{ str_repeat('★', $review->score) }}</p>
             <p>{{$review->comment}}</p>
             <label>{{$review->created_at}} {{$review->user->name}}</label>
             @endforeach
@@ -53,6 +58,16 @@
         <div class="comment-container">
             <form method="POST" action="{{ route('reviews.store') }}">
             @csrf
+            
+            <h4>評価</h4>
+            <select name="score" class="form-control m-2 review-score-color">
+                <option value="5" class="review-score-color">★★★★★</option>
+                <option value="4" class="review-score-color">★★★★</option>
+                <option value="3" class="review-score-color">★★★</option>
+                <option value="2" class="review-score-color">★★</option>
+                <option value="1" class="review-score-color">★</option>
+            </select>
+            
             <p class="h4">COMMENT</p>
             @error('comment')
             <strong>レビュー内容を入力してください</strong>

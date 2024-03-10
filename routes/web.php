@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
         Route::get('users/mypage', 'mypage')->name('mypage');
         Route::get('users/mypage/edit', 'edit')->name('mypage.edit');
         Route::put('users/mypage', 'update')->name('mypage.update');
+        Route::get('users/mypage/reservations', 'reservations' )->name('mypage.reservations');
     });
 });
 

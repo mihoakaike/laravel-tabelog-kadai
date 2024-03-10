@@ -23,4 +23,15 @@ class Store extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+
+    const DAY_OF_WEEK = ['日','月','火','水','木','金','土'];
+
+    public function setHolidayAttribute($holidays)
+    {
+        $results = [];
+        foreach($holidays as $holiday){
+            $results[] = Store::DAY_OF_WEEK[$holiday];
+        }            
+        $this->attributes['holiday'] = implode(",",$results);
+    }
 }

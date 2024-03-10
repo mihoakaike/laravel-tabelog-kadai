@@ -68,7 +68,7 @@ class StoreController extends AdminController
         $show = new Show(Store::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $grid->column('category.name', __('Category Name'));
+        $show->column('category.name', __('Category Name'));
         $show->field('name', __('Name'));
         $show->field('img1', __('Img1'))->image();
         $show->field('img2', __('Img2'))->image();
@@ -110,7 +110,7 @@ class StoreController extends AdminController
         $form->text('post_code', __('Post code'));
         $form->text('address', __('Address'));
         $form->text('phone_number', __('Phone number'));
-        $form->text('holiday', __('Holiday'));
+        $form->checkbox('holiday', __('Holiday'))->options(Store::DAY_OF_WEEK);
 
         return $form;
     }

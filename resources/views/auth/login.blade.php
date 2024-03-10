@@ -38,7 +38,7 @@
             <div class="form-check">
             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
  
-            <label class="form-check-label samuraimart-check-label w-100" for="remember">次回から自動的にログインする</label>
+            <label class="form-check-label check-label w-100" for="remember">次回から自動的にログインする</label>
             </div>
             </div>
 

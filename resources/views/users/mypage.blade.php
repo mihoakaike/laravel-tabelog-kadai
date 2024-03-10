@@ -29,7 +29,10 @@
         </div>
  
         <hr>
- 
+        
+        <a href="{{ route('mypage.reservations') }}">予約一覧</a>
+
+
         <hr>
  
         <div class="container">

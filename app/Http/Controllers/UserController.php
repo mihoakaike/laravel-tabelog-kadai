@@ -47,4 +47,10 @@ class UserController extends Controller
          return to_route('mypage');
     }
 
+    public function reservations()
+    {
+        $reservations = Auth::user()->reservations;
+
+        return view('users.reservations', compact('reservations'));
+    }
 }
