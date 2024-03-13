@@ -45,5 +45,7 @@ Route::resource('stores', StoreController::class);
 
 Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
+Route::get('stores',[StoreController::class,'show'])->name('reviews.list');
+
 Route::resource('reservations', ReservationController::class);
 

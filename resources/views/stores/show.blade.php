@@ -45,36 +45,41 @@
     <p class="float-left display-6">REVIEW <i class="fa-solid fa-user-pen"></i></p>
     </div>
 
-    <div class="offset-1 tenposhousai-container">
-        <div class="review-container">
+    <div class="offset-1 review-container-1">
+        <div class="review-container-2">
             @foreach($reviews as $review)
-            <p class="review-score-color">{{ str_repeat('★', $review->score) }}</p>
-            <p>{{$review->comment}}</p>
-            <label>{{$review->created_at}} {{$review->user->name}}</label>
+            <div class="review-container-3">
+                <p class="review-rating-color">{{ str_repeat('★', $review->rating) }}</p>
+                <p>{{$review->comment}}</p>
+                <label>{{$review->created_at}} {{$review->user->name}}</label>
+            </div>
             @endforeach
         </div>
 
+        <div>
+        {{ $reviews->links('vendor.pagination.tailwind') }}
+        </div>
+
         @auth
-        <div class="comment-container">
-            <form method="POST" action="{{ route('reviews.store') }}">
+        <div class="col-md-11  comment-container">
+            <hr>
+            <p class="fs-4 fw-normal">REVIEW FORM</p>
+            <form class="comment-container-form" method="POST" action="{{ route('reviews.store') }}">
             @csrf
-            
-            <h4>評価</h4>
-            <select name="score" class="form-control m-2 review-score-color">
-                <option value="5" class="review-score-color">★★★★★</option>
-                <option value="4" class="review-score-color">★★★★</option>
-                <option value="3" class="review-score-color">★★★</option>
-                <option value="2" class="review-score-color">★★</option>
-                <option value="1" class="review-score-color">★</option>
+            <select name="rating" class="form-control mb-1">
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
             </select>
             
-            <p class="h4">COMMENT</p>
             @error('comment')
             <strong>レビュー内容を入力してください</strong>
             @enderror
             <textarea name="comment"></textarea>
             <input type="hidden" name="store_id" value="{{$store->id}}">
-            <button type="submit" class="btn submit-button ml-2">レビューを追加</button>
+            <button type="submit" class="btn border submit-button ml-2">レビューを追加</button>
             </form>     
         </div>   
         @endauth

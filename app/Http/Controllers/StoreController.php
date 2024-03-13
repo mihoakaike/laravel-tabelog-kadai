@@ -63,7 +63,9 @@ class StoreController extends Controller
     public function show(Store $store)
     {
         $reviews = $store->reviews()->get();
-  
+        
+        $reviews = Review::paginate(2);
+
         return view('stores.show', compact('store', 'reviews'));
     }
 

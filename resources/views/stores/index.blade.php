@@ -9,7 +9,7 @@
         <p class="display-6">店舗一覧</p>
     </figure>    
             
-    <form action="" method="get">
+    <form class="search-form"action="" method="get">
         <input type=text class="index-search" name="search" >
         <input class="fas" type="submit" value="&#xf002">
     </form>    

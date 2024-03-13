@@ -29,7 +29,7 @@
     padding: 0 2rem;
   }
 
-  form {
+  .search-form {
     display:flex;
     justify-content: flex-end;
     margin: 10px;
@@ -132,16 +132,24 @@
     display: flex;
   }
 
-  .review-container {
-    width: 40%;
-    margin-right: 5%;
+  .review-container-2 {
+    display:inline-flex;
+    width: 100%;
   }
   
-  .comment-container {
-    display:flex;
-    flex-flow:column;
-    /* justify-content:space-between; */
+  .review-container-3 {
+    display:inline;
     width: 45%;
+    margin: 0 auto 1.5% auto;
+  }
+
+  .comment-container-form select {
+    width: 12%;
+  }
+
+  .comment-container-form button {
+    display: block;
+	  margin-left: auto;
   }
 
   .comment-container textarea {
