@@ -13,7 +13,7 @@
             @csrf
             <!-- 氏名 -->
             <div class="form-group row">
-            <label for="name" class="col-md-5 col-form-label text-md-left">氏名<span class="ml-1 require-input-label"><span class="require-input-label-text">必須</span></span></label>
+            <label for="name" class="col-md-5 col-form-label text-md-left">氏名</label>
 
             <div class="col-md-7">
             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror login-input" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="侍 太郎"> 
@@ -28,7 +28,7 @@
 
             <!-- メールアドレス -->
             <div class="form-group row">
-            <label for="email" class="col-md-5 col-form-label text-md-left">メールアドレス<span class="ml-1 require-input-label"><span class="require-input-label-text">必須</span></span></label>
+            <label for="email" class="col-md-5 col-form-label text-md-left">メールアドレス</label>
  
             <div class="col-md-7">
             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login-input" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="samurai@samurai.com">
@@ -43,7 +43,7 @@
 
             <!-- パスワード -->
             <div class="form-group row">
-            <label for="password" class="col-md-5 col-form-label text-md-left">パスワード<span class="ml-1 require-input-label"><span class="require-input-label-text">必須</span></span></label>
+            <label for="password" class="col-md-5 col-form-label text-md-left">パスワード</label>
  
             <div class="col-md-7">
             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror login-input" name="password" required autocomplete="new-password">
@@ -58,15 +58,15 @@
             </div>
 
             <div class="form-group row">
-            <label for="password-confirm" class="col-md-5 col-form-label text-md-left"></label>
+            <label for="password-confirm" class="col-md-5 col-form-label text-md-left">確認</label>
  
             <div class="col-md-7">
             <input id="password-confirm" type="password" class="form-control login-input" name="password_confirmation" required autocomplete="new-password">
             </div>
             </div>
 
-            <div class="form-group">
-            <button type="submit" class="btn submit-button w-100">アカウント作成</button>
+            <div class="register-form-group">
+            <button type="submit" class="btn border w-30">アカウント作成</button>
             </div>
 
             </form>

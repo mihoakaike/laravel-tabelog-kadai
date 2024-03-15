@@ -5,7 +5,7 @@
 <main>
     <!-- 予約完了メッセージ-->
     @if (session('message'))
-    {{ session('message') }}
+    <h1 class="col-md-6 offset-md-4">{{ session('message') }}</h1>
     @endif
 
     <!-- 店舗名 -->

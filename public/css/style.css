@@ -182,26 +182,16 @@
     background-color: #ffffff;
   }
 
-  .check-label {
-    font-size: 12px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
+  .form-group input {
+    margin-bottom: 5px;
   }
-  
-  .submit-button {
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-    background-color: #998675;
+
+  /* 登録 */
+  .register-form-group {
+    text-align:right;
+    margin-top: 5px;
   }
+
 
   /* PC用スタイル */
   @media screen and (min-width: 768px){

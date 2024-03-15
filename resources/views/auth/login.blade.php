@@ -43,7 +43,7 @@
             </div>
 
             <div class="form-group">
-            <button type="submit" class="mt-3 btn submit-button w-100">ログイン</button>
+            <button type="submit" class="mt-3 btn border submit-button w-100">ログイン</button>
             </div>
             
             </form>
