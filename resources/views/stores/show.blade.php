@@ -10,7 +10,22 @@
 
     <!-- 店舗名 -->
     <p class="offset-1 display-6">{{ $store->name }}</p>
-    
+
+    <!-- お気に入り -->
+    <div>
+    @if(Auth::user()->favorite_stores()->where('store_id', $store->id)->exists())
+        <a href="{{ route('favorites.destroy', $store->id) }}" class="btn favorite-button text-favorite w-100" onclick="event.preventDefault(); document.getElementById('favorites-destroy-form').submit();">
+            <i class="fa fa-heart"></i>
+            お気に入り解除
+        </a>
+    @else
+        <a href="{{ route('favorites.store', $store->id) }}" class="btn favorite-button text-favorite w-100" onclick="event.preventDefault(); document.getElementById('favorites-store-form').submit();">
+            <i class="fa fa-heart"></i>
+                お気に入り
+        </a>
+    @endif
+
+    </div>
     <!-- イメージ画像 -->
     <section id="carousel-section">
         <div class="carousel">

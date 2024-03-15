@@ -24,7 +24,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Reservation::class);
     }
 
-
+    public function favorite_stores() {
+        return $this->belongsToMany(Store::class)->withTimestamps();
+    }
     protected $dates = ['deleted_at'];
 
     /**

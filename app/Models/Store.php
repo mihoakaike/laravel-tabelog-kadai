@@ -24,6 +24,10 @@ class Store extends Model
         return $this->hasMany(Reservation::class);
     }
 
+    public function favorited_users() {
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
     const DAY_OF_WEEK = ['日','月','火','水','木','金','土'];
 
     public function setHolidayAttribute($holidays)

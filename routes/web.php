@@ -5,6 +5,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,11 +42,16 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('stores', StoreController::class);
-
-Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');
-
 Route::get('stores',[StoreController::class,'show'])->name('reviews.list');
 
 Route::resource('reservations', ReservationController::class);
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('stores', StoreController::class);
+
+    Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');
+
+    Route::post('favorites/{store_id}', [FavoriteController::class, 'store'])->name('favorites.store');
+    Route::delete('favorites/{store_id}', [FavoriteController::class, 'destroy'])->name('favorites.destroy');
+});
 
